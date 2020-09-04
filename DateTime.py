@@ -40,7 +40,7 @@ def getUTCwithTimeZone(timezone):
 # Let's tie this all together. This function will take the current UTC time adjusted
 # with the time zone and determine if it is in the maintenance window
 def isInMaintWindow(currentTime):
-    if currentTime.hour == getMaintWindowStart().hour and currentTime.hour < getMaintWindowEnd().hour:
+    if currentTime.hour == getMaintWindowStart().hour or currentTime.hour < getMaintWindowEnd().hour:
         return True
 
     # implied else
